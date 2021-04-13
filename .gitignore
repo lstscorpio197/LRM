@@ -10,7 +10,6 @@ DTT.LRM.Core/bin/
 DTT.LRM.EntityFramework/bin/
 DTT.LRM.EntityFramework/obj/Debug/
 DTT.LRM.Core/obj/Debug/
-DTT.LRM.Web/bin/
 DTT.LRM.Web/obj/Debug/
 DTT.LRM.WebApi/bin/
 DTT.LRM.WebApi/obj/
@@ -1892,3 +1891,8 @@ packages/xunit.runner.visualstudio.2.4.3/build/uap10.0.16299/xunit.runner.visual
 packages/xunit.runner.visualstudio.2.4.3/build/uap10.0.16299/xunit.runner.visualstudio.targets
 packages/xunit.runner.visualstudio.2.4.3/build/uap10.0.16299/xunit.runner.visualstudio.uwp.testadapter.pri
 .vs/DTT.LRM/config/applicationhost.config
+DTT.LRM.Web/bin/dotnet-bundle.exe
+DTT.LRM.Web/bin/DTT.LRM.Application.dll.config
+DTT.LRM.Web/bin/DTT.LRM.Core.dll.config
+DTT.LRM.Web/bin/DTT.LRM.EntityFramework.dll.config
+DTT.LRM.Web/bin/DTT.LRM.WebApi.dll.config
