@@ -1,0 +1,75 @@
+.row-permission{
+    margin: 20px 0;
+    padding-left: 0px !important;
+}
+.permission i{
+    transform: scale(1.5,1.5);
+    color: rgb(185, 185, 13);
+    cursor: pointer;
+}
+.permission ul , .list-module ul{
+    margin-left: 30px;
+    list-style:none;
+    display: none;
+}
+.permission ul li{
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    height: 30px;
+    text-align: center;
+    margin: 20px auto;
+    padding-top: 5px;
+    background-color: #EBEBEB;
+}
+.list-module ul li{
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    height: 30px;
+    margin: 20px auto;
+    padding-top: 5px;
+    text-align: center;
+    background-color: #EBEBEB;
+}
+.list-module{
+    padding-top: 5px;
+    display: none;
+}
+.check-role{
+    padding-top: 30px ;
+}
+.check-role .form-check{
+    margin: 30px auto;
+}
+.group-name{
+    font-weight: 600;
+    font-size: 16px;
+}
+.title-module{
+    padding-left: 29px;
+}
+.save{
+    text-align: center;
+}
+#save{
+    padding-top: 10px;
+    padding-bottom: 50px;
+    display: none;
+}
+.pd{
+    padding-top: 30px;
+}
+.btn-submit-per{
+    margin: 20px auto;
+}
+.table-list-feature{
+    display: none;
+}
+.none-slt{
+    pointer-events: none;
+}
+.module{
+    cursor: pointer;
+}
+input:focus{
+    outline: 0 !important;
+}

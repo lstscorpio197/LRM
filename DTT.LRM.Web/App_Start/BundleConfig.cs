@@ -55,16 +55,14 @@ namespace DTT.LRM.Web
             bundles.Add(
                 new StyleBundle("~/Bundles/App/vendor/css")
                     .Include("~/fonts/roboto/roboto.css", new CssRewriteUrlTransform())
-                    .Include("~/fonts/material-icons/materialicons.css", new CssRewriteUrlTransform())
                     .Include("~/lib/bootstrap/dist/css/bootstrap.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/toastr/toastr.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/font-awesome/css/font-awesome.css", new CssRewriteUrlTransform())
                     .Include("~/lib/Waves/dist/waves.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/animate.css/animate.css", new CssRewriteUrlTransform())
-                    .Include("~/css/materialize.css", new CssRewriteUrlTransform())
                     .Include("~/css/style.css", new CssRewriteUrlTransform())
                     .Include("~/css/themes/all-themes.css", new CssRewriteUrlTransform())
+                    .Include("~/css/styled/style.css", new CssRewriteUrlTransform())
+                    .Include("~/css/styled/login.css", new CssRewriteUrlTransform())
+                    .Include("~/css/styled/page_shopping.css", new CssRewriteUrlTransform())
+                    .Include("~/css/styled/permission.css", new CssRewriteUrlTransform())
                 );
 
             //~/Bundles/App/vendor/js

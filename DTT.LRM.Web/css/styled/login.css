@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: font-size: 16px;letter-spacing: 1px; */
+}
+input:focus{
+    outline: 0 ;
+}
+.left {
+        background-color: #F6F6F6;
+        z-index: 1;
+    }
+
+    .right {
+        background-color: #6285F9;
+        height: 656px;
+    }
+
+    .carousel {
+        text-align: center;
+        line-height: 500px;
+    }
+
+    @media only screen and (min-width : 1200px) {
+        .carousel-caption {
+            top: 70%;
+        }
+    }
+
+    .title {
+        color: black;
+    }
+
+    .content {
+        font-weight: 400;
+        color: black;
+    }
+
+    .logo img {
+        width: 149px;
+        padding-top: 20px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    #span {
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    .login-title h5 {
+        border-left: 4px solid orange;
+        margin-right: 2px;
+        font-weight: 700;
+    }
+
+    .login-title {
+        padding-bottom: 20px;
+    }
+
+    .login-form {
+        height: 500px;
+        width: 345px;
+        background-color: white;
+        top: 80px;
+        right: 170px;
+        position: absolute;
+        box-shadow: 2px 2px 5px 2px gray;
+        border-radius: 6px;
+        z-index: 2;
+    }
+
+    #form {
+        margin: 45px;
+    }
+
+    .element {
+        font-size: 14px;
+    }
+
+    .forgot {
+        float: right;
+    }
+
+    .forgot a {
+        color: red;
+        text-decoration: none;
+    }
+
+    #remember {
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        background-color: #6285F9 !important;
+        border-radius: 5px;
+        color: aliceblue !important;
+        margin: 25px 0;
+    }
+
+    .btn-submit:hover {
+        background-color: rgb(46, 92, 243) !important;
+    }
+
+    .carousel-indicators li {
+        box-sizing: content-box;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        width: 10px;
+        height: 10px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: unset;
+        cursor: pointer;
+        background-color: black;
+        background-clip: unset;
+        border-top: 0;
+        border-bottom: 0;
+        opacity: .5;
+        transition: opacity .6s ease;
+    }
+
+    .icon {
+        position: relative;
+    }
+
+    .icon i {
+        position: absolute;
+        right: 11px;
+        top: 36px;
+    }
+    #regis-form .icon i {
+        position: absolute;
+        right: 11px;
+        top: 5px;
+    }
+    #closeeyes,
+    .openeyes {
+        cursor: pointer;
+    }
+    .form-check{
+        padding-left: 10px ;
+    }
+    .carousel-item img{
+        width:280px
+    }
+    .remember{
+        padding-left: 0 !important;
+    }
+      @media (max-width: 575.98px) {
+        .login-form {
+            height: 450px;
+            width: 300px;
+            background-color: white;
+            top: 103px;
+            right: 103px;
+            position: absolute;
+            box-shadow: 2px 2px 5px 2px grey;
+            border-radius: 6px;
+            z-index: 2;
+            margin: 0 auto;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .login-form {
+            height: 450px;
+            width: 300px;
+            background-color: white;
+            top: 103px;
+            box-shadow: 2px 2px 5px 2px grey;
+            border-radius: 6px;
+            z-index: 2;
+            margin: 0 auto;
+        }
+      }
+      @media (max-width: 991.98px) {
+        .login-form {
+            height: 450px;
+            width: 300px;
+            background-color: white;
+            top: 103px;
+            right: 0px;
+            position: absolute;
+            box-shadow: 2px 2px 5px 2px grey;
+            border-radius: 6px;
+            z-index: 2;
+            margin: 0 auto;
+        }
+      }
+      .regis-acc{
+          font-size: 14px;
+          letter-spacing: 0px;
+      }
+      /* regis form */
+      .regis-form{
+        height: 520px;
+        width: 345px;
+        background-color: white;
+        top: 66px;
+        right: 170px;
+        position: absolute;
+        box-shadow: 2px 2px 5px 2px gray;
+        border-radius: 6px;
+        z-index: 2;
+      }
+      #regis-form{
+          margin: 20px 40px;
+      }

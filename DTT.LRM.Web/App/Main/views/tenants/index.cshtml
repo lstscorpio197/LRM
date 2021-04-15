@@ -1,59 +1,306 @@
-﻿<div class="row clearfix" ng-controller="app.views.tenants.index as vm">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card main-content">
-            <div class="header">
-                <h2>
-                    @L("Tenants")
-                </h2>
-                <ul class="header-dropdown m-r--5">
-                    <i class="fa fa-spin fa-spinner" ng-if="isTableLoading"></i>
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block()" ng-click="vm.refresh();"><i class="material-icons">refresh</i>Refresh</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="body table-responsive">
-                <table class="table table-hover table-striped">
-                    <thead>
-                    <tr>
-                        <th>@L("TenancyName")</th>
-                        <th>@L("Name")</th>
-                        <th>
-                            <div style="text-align:center">@L("IsActive")</div>
-                        </th>
-                        <th>@L("Actions")</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="tenant in vm.tenants">
-                        <td>{{tenant.tenancyName}}</td>
-                        <td>{{tenant.name}}</td>
-                        <td align="center">
-                            <i class="material-icons" ng-if="tenant.isActive" style="color:green;">check_box</i>
-                            <i class="material-icons" ng-if="!tenant.isActive" style="color:red;">indeterminate_check_box</i>
-                        </td>
-                        <td class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">menu</i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.openTenantEditModal(tenant)"><i class="material-icons">create</i>Edit</a></li>
-                                <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.delete(tenant)"><i class="material-icons">delete_sweep</i>Delete</a></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+﻿<h4>Danh sách tài sản</h4>
+<table class="table table-bordered table-inverse">
+    <thead>
+        <tr class="text-center">
+            <td>
+                <input type="checkbox" name="name" value="" />
+            </td>
+            <td>STT</td>
+            <td>Mã tài sản</td>
+            <td>Tên tài sản</td>
+            <td>Ngày mua</td>
+            <td>Ngày kê khai</td>
+            <td>Giá trị</td>
+            <td>Hành động</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center">
+                <input type="checkbox" name="name" value="" />
+            </td>
+            <td class="text-center">1</td>
+            <td>Bàn</td>
+            <td>Ghế</td>
+            <td>10-10-2010</td>
+            <td>20-10-2010</td>
+            <td>20.20000</td>
+            <td class="text-center"><a>Xóa</a> <a>Sửa</a></td>
+        </tr>
+    </tbody>
+</table>
 
-                <button type="button" data-toggle="modal" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" ng-click="vm.openTenantCreationModal()">
-                    <i class="material-icons">add</i>
-                </button>
-            </div>
+
+
+@*Create*@
+<div class="row">
+    <div class="title">
+        <div class="col-md-10 title-left">
+            <h4>Thêm mới tài sản</h4>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary title-right">
+                <svg class="bi bi-file-earmark-spreadsheet" width="1em" height="1em" viewBox="0 0 16 16"
+                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M13 9H3V8h10v1zm0 3H3v-1h10v1z" />
+                    <path fill-rule="evenodd" d="M5 14V9h1v5H5zm4 0V9h1v5H9z" />
+                    <path d="M4 1h5v1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6h1v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" />
+                    <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z" />
+                </svg> &nbsp; <label for="btn-submit">Lưu lại</label>
+            </button>
         </div>
     </div>
 </div>
+
+<!-- End title -->
+<!-- List active -->
+<form action="" method="POST" enctype="multipart/form-data">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <!-- general infomation -->
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+               role="tab" aria-controls="pills-home" aria-selected="true">Thông tin chung</a>
+        </li>
+    </ul>
+
+    <!-- End list active -->
+
+
+    <div class="tab-content" id="pills-tabContent">
+        <!-- general infomation tab -->
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+             aria-labelledby="pills-home-tab">
+            <div class="row asset-row">
+                <div class="col-md-6 element">
+                    <!-- active-1 -->
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Mã tài sản: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control " name="TAISANMA" id="code-here">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Tên Tài Sản: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" name="TAISANTEN" class="form-control" required>
+                        </div>
+                    </div>
+                    <input type="text" value="" style="display: none" name="ChungTu"
+                           class="form-control CTM">
+                    <!-- active-2 -->
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Nhóm tài sản: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <select class="form-control" name="NHOMTSMA" id="Property-group">
+                                <option value="null">-----Chọn-----</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- active-3 -->
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Loại tài sản: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <select class="form-control code-cate" name="LOAITSMA" required>
+                                <option value="">-----Chọn-----</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- active-4 -->
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Giá trị thông tin: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <select class="form-control fix-center" id="valueInfo" name="GIATRITHONGTIN"
+                                    disabled>
+                                <option value="S">S - Special</option>
+                                <option value="H">H - Hight level</option>
+                                <option value="M">M - Medium level</option>
+                                <option value="L">L - Low level</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- active-6 -->
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Giá trị tài sản: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="number" class="form-control value" name="GIATRITS" required>
+                        </div>
+                    </div>
+                    <!-- active-7 -->
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Hiện trạng: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <select class="form-control fix-center" name="HIENTRANGTS">
+                                <option value="M">M - Mới</option>
+                                <option value="TB">TB - Trung bình</option>
+                                <option value="C">C - Cũ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-5 col-form-label">
+                            Mục đích: <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-7">
+                            <div class="form-check">
+                                <input type="radio" id="thietbi" class="form-check-input"
+                                       name="ISLINHKIEN" value="1" checked>
+                                <label for="thietbi">Thiết bị</label>
+                                <input id="linhkien" type="radio" class="form-check-input"
+                                       name="ISLINHKIEN" value="0">
+                                <label for="linhkien">Linh kiện</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 element-2">
+                    <form action="">
+                        <div class="form-group row fix-row">
+                            <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                <span class="sos">Barcode</span>: <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-7">
+                                <input type="hidden" value="" name="BARCODE" id="barcode">
+                                <p class="barcode"></p>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <div class="offset-sm-1 col-sm-10">
+                                <div class="form-group">
+                                    <input type="text" class="form-control " name="NHOMTSTEN"
+                                           id="name-group">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <div class="offset-sm-1 col-sm-10">
+                                <div class="form-group">
+                                    <input type="text" class="form-control " name="LOAITSTEN"
+                                           id="name-cate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                Mã Kho: <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <select class="form-control store-code" name="KHOMA" required>
+                                        <option value="">-----Chọn-----</option>
+                                        <option value="">-----Chọn-----</option>
+                                        <option value="">-----Chọn-----</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                Tên Kho: <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <input type="text" name="KHOTEN" class="form-control store-name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                Đơn vị tính: <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <select class="form-control" name="DVTMA">
+                                        <option value="null">-----Chọn-----</option>
+                                        <option value="null">-----Chọn-----</option>
+                                        <option value="null">-----Chọn-----</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                Nguyên tệ: <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <select class="form-control currency" name="NGUYENTEMA" required>
+                                        <option value="">-----Chọn-----</option>
+                                        <option value="">-----Chọn-----</option>
+                                        <option value="">-----Chọn-----</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row fix-row">
+                            <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                Tỷ giá: <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-7">
+                                <input type="text" id="currency" class="form-control "
+                                       name="NGUYENTETIGIA">
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                     aria-labelledby="pills-home-tab">
+                    <div class="row asset-row">
+                        <div class="col-md-6 element">
+                            <!-- active-1 -->
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-5 col-form-label">
+                                    Chủ sở hữu: <span class="required">*</span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <select class="form-control Owner" name="Owner" required>
+                                        <option value="">---Chọn---</option>
+                                        <option value="">---Chọn---</option>
+                                        <option value="">---Chọn---</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- active-2 -->
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-5 col-form-label">
+                                    Chức vụ: <span class="required">*</span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <input type="text" id="chucvu" class="form-control ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 element-2">
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="offset-sm-1 col-sm-3">
+                                    Phòng ban: <span class="required">*</span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control " id="PhongBan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

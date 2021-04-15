@@ -5031,15 +5031,7 @@ section.content {
 .form-group {
   width: 100%;
   margin-bottom: 25px; }
-  .form-group .form-control {
-    width: 100%;
-    border: none;
-    box-shadow: none;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    border-radius: 0;
-    padding-left: 0; }
+  
   .form-group .help-info {
     float: right;
     font-size: 12px;
@@ -5114,10 +5106,6 @@ section.content {
   bottom: 35px;
   font-size: 12px; }
 
-.form-control[disabled],
-.form-control[readonly],
-fieldset[disabled] .form-control {
-  background-color: transparent; }
 
 /* Color Picker ================================ */
 .colorpicker {

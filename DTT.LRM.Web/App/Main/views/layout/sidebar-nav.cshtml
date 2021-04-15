@@ -1,54 +1,56 @@
-﻿<div class="menu" ng-controller="app.views.layout.sidebarNav as vm">
-    <ul class="list">
-        <li ng-repeat="menuItem in vm.menuItems" ng-if="vm.showMenuItem(menuItem)" ui-sref-active="active">
-            <!-- route name -->
-            <a ui-sref="{{menuItem.route}}" ng-if="!menuItem.items && menuItem.route.indexOf('http') != 0">
-                <i ng-if="menuItem.icon" class="material-icons">{{menuItem.icon}}</i>
-                <span>{{menuItem.name}}</span>
-            </a>
-            <!-- Static link (starts with 'http') -->
-            <a href="{{menuItem.route}}" target="_blank" ng-if="!menuItem.items  && menuItem.route.indexOf('http') == 0">
-                <i ng-if="menuItem.icon" class="material-icons">{{menuItem.icon}}</i>
-                <span>{{menuItem.name}}</span>
-            </a>
-            <!-- Has child menu items (so, this is a parent menu) -->
-            <a href="javascript:void(0);" class="menu-toggle" ng-if="menuItem.items">
-                <i ng-if="menuItem.icon" class="material-icons">{{menuItem.icon}}</i>
-                <span>{{menuItem.name}}</span>
-            </a>
-            <ul class="ml-menu" ng-if="menuItem.items">
-                <li ng-repeat="subMenuItem in menuItem.items" ng-if="vm.showMenuItem(subMenuItem)" ui-sref-active="active">
-                    <!-- route name -->
-                    <a ui-sref="{{subMenuItem.route}}" class="toggled" ng-if="!subMenuItem.items && subMenuItem.route.indexOf('http') != 0">
-                        <i ng-if="subMenuItem.icon" class="material-icons">{{subMenuItem.icon}}</i>
-                        <span>{{subMenuItem.name}}</span>
-                    </a>
-                    <!-- Static link (starts with 'http') -->
-                    <a href="{{subMenuItem.route}}" class="toggled" target="_blank" ng-if="!subMenuItem.items && subMenuItem.route.indexOf('http') == 0">
-                        <i ng-if="subMenuItem.icon" class="material-icons">{{subMenuItem.icon}}</i>
-                        <span>{{subMenuItem.name}}</span>
-                    </a>
-                    <!-- Has child menu items (so, this is a parent menu) -->
-                    <a href="javascript:void(0);" class="menu-toggle" ng-if="subMenuItem.items">
-                        <i ng-if="subMenuItem.icon" class="material-icons">{{subMenuItem.icon}}</i>
-                        <span>{{subMenuItem.name}}</span>
-                    </a>
-                    <ul class="ml-menu" ng-if="subMenuItem.items">
-                        <li ng-repeat="subSubMenuItem in subMenuItem.items" ng-if="vm.showMenuItem(subSubMenuItem)" ui-sref-active="active">
-                            <!-- route name -->
-                            <a ui-sref="{{subSubMenuItem.route}}" ng-if="subSubMenuItem.route.indexOf('http') != 0">
-                                <i ng-if="subSubMenuItem.icon" class="material-icons">{{subSubMenuItem.icon}}</i>
-                                <span>{{subSubMenuItem.name}}</span>
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="list">
+            <div class="menu-all">
+
+                <!-- menu 1 -->
+
+                <div class="menu-item">
+                    <div class="col-md-12">
+                        <span id="title-1">
+                            <svg class="bi bi-house-door-fill" width="1em" height="1em" viewBox="0 0 16 16"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z" />
+                                <path fill-rule="evenodd"
+                                      d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                            </svg> &nbsp; <a href="index.html" class="element element-1"> Tổng quan
                             </a>
-                            <!-- Static link (starts with 'http') -->
-                            <a href="{{subSubMenuItem.route}}" target="_blank" ng-if="subSubMenuItem.route.indexOf('http') == 0">
-                                <i ng-if="subSubMenuItem.icon" class="material-icons">{{subSubMenuItem.icon}}</i>
-                                <span>{{subSubMenuItem.name}}</span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="menu-item">
+                    <div class="col-md-12">
+                        <span id="title-3">
+                            <svg class="bi bi-list-ul" width="1em" height="1em" viewBox="0 0 16 16"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                            </svg> &nbsp; <a href="TaiSan/index" class="element element-3">
+                                Danh Mục Tài Sản
                             </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+                        </span>
+                    </div>
+                </div>
+
+                
+
+                <div class="menu-item">
+                    <div class="col-md-12">
+                        <span id="title-5">
+                            <svg class="bi bi-wrench" width="1em" height="1em" viewBox="0 0 16 16"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                            </svg> &nbsp; <a href="" class="element element-5">
+                                Nâng
+                                cấp / Sửa chữa
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
