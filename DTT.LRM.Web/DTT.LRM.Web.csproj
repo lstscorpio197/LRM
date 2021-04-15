@@ -505,12 +505,10 @@
     <Content Include="App\Main\views\roles\editModal.js" />
     <Content Include="App\Main\views\roles\createModal.js" />
     <Content Include="App\Main\views\roles\index.js" />
-    <Content Include="App\Main\views\tenants\editModal.js" />
     <Content Include="App\Main\views\users\editModal.js" />
     <Content Include="App\Main\views\users\createModal.js" />
     <Content Include="App\Main\views\users\index.js" />
-    <Content Include="App\Main\views\tenants\createModal.js" />
-    <Content Include="App\Main\views\tenants\index.js" />
+    <Content Include="App\Main\views\Tenants\index.js" />
     <Content Include="App\Main\_libconfig.js" />
     <Content Include="Common\Scripts\helpers.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -568,6 +566,11 @@
     <Content Include="css\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="css\styled\doashboard.css" />
+    <Content Include="css\styled\login.css" />
+    <Content Include="css\styled\page_shopping.css" />
+    <Content Include="css\styled\permission.css" />
+    <Content Include="css\styled\style.css" />
     <Content Include="css\themes\all-themes.css" />
     <Content Include="css\themes\all-themes.min.css" />
     <Content Include="css\themes\theme-amber.css" />
@@ -617,6 +620,7 @@
     <Content Include="App\Main\views\home\home.cshtml" />
     <Content Include="App\Main\views\about\about.cshtml" />
     <Content Include="App\Main\web.config" />
+    <Content Include="images\LOGO.png" />
     <Content Include="images\user-img-background.jpg" />
     <Content Include="images\user.png" />
     <Content Include="js\admin.js" />
@@ -2310,8 +2314,7 @@
     <Content Include="lib\Waves\Gruntfile.js" />
     <Content Include="lib\Waves\src\js\waves.js" />
     <Content Include="log4net.config" />
-    <Content Include="App\Main\views\tenants\index.cshtml" />
-    <Content Include="App\Main\views\tenants\createModal.cshtml" />
+    <Content Include="App\Main\views\Tenants\index.cshtml" />
     <Content Include="App\Main\views\users\createModal.cshtml" />
     <Content Include="App\Main\views\users\index.cshtml" />
     <Content Include="lib\animate.css\.bower.json" />
@@ -2729,7 +2732,6 @@
     <Content Include="App\Main\views\layout\sidebar-nav.cshtml" />
     <Content Include="App\Main\views\layout\sidebar-footer.cshtml" />
     <Content Include="App\Main\views\layout\right-sidebar.cshtml" />
-    <Content Include="App\Main\views\tenants\editModal.cshtml" />
     <Content Include="App\Main\views\users\editModal.cshtml" />
     <Content Include="App\Main\views\roles\index.cshtml" />
     <Content Include="App\Main\views\roles\createModal.cshtml" />
@@ -3588,6 +3590,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LRMControllerBase.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
+    <Compile Include="Controllers\TaiSan\TaiSanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3729,6 +3732,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\TaiSan\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

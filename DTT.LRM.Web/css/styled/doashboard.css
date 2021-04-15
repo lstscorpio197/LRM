@@ -1,0 +1,33 @@
+.welcome{
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.char{
+    display: grid;
+    grid-template-columns: 40% 58%;
+    grid-gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.char_left , .char_right , .report_left , .report_right{
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) ;
+}
+.char_left h4{
+    padding: 10px 0;
+    font-weight: 400;
+}
+.report_left > legend , .report_right > legend{
+    padding-top: 20px;
+}
+.filter{
+    padding-bottom: 20px;
+}
+.reports {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
